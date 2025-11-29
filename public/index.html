@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>seokimun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 아이콘용 (원하면 제거 가능) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 상단 바 -->
+    <header class="top-bar">
+      <a href="/" class="site-title">SEOKIMUN</a>
+      <nav class="nav-links">
+        <a href="./pages/post.html">Posts</a>
+        <a href="./pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <!-- 가운데 메인 섹션 -->
+    <main class="hero">
+      <section class="profile-card">
+        <div class="avatar-wrapper">
+          <img src="./assets/profile.jpeg" alt="프로필 이미지" class="avatar" />
+        </div>
+
+        <h1 class="name">seokimun</h1>
+        <p class="role">Backend Developer</p>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/seokimun"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <span>© 2025 seokimun · Powered by NestJS</span>
+    </footer>
+  </body>
+</html>

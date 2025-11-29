@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Posts · seokimun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <header class="top-bar">
+      <a href="/" class="site-title">SEOKIMUN</a>
+      <nav class="nav-links">
+        <a href="/pages/post.html">Posts</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="posts-container">
+      <div class="posts-wrapper">
+        <h1 class="posts-title">Posts</h1>
+
+        <ul class="posts-list" id="posts-list"></ul>
+      </div>
+    </main>
+
+    <footer class="footer">© 2025 seokimun · Powered by NestJS</footer>
+
+    <script>
+      async function loadPosts() {
+        const res = await fetch('/post');
+        const posts = await res.json();
+
+        const list = document.getElementById('posts-list');
+        list.innerHTML = '';
+
+        posts.forEach((post) => {
+          const li = document.createElement('li');
+          li.className = 'post-item';
+
+          const date = new Date(post.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
+
+          const dateSpan = document.createElement('span');
+          dateSpan.className = 'post-date';
+          dateSpan.textContent = date;
+
+          const link = document.createElement('a');
+          link.className = 'post-link';
+          link.href = `/post/${post.slug}`;
+          link.textContent = post.title;
+
+          li.appendChild(dateSpan);
+          li.appendChild(link);
+          list.appendChild(li);
+        });
+      }
+
+      loadPosts();
+    </script>
+  </body>
+</html>

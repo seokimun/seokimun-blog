@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <!-- 상단 네비 -->
+    <header class="top-bar">
+      <a href="/" class="site-title">SEOKIMUN</a>
+      <nav class="nav-links">
+        <a href="/pages/post.html">Posts</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+    </header>
+
+    <!-- 본문 영역 -->
+    <main class="post-page-container">
+      <article class="post-page-wrapper markdown-body">{{content}}</article>
+    </main>
+
+    <footer class="footer">© 2024 - 2025 seokimun · Powered by NestJS</footer>
+  </body>
+</html>
