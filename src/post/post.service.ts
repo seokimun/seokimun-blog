@@ -24,21 +24,18 @@ export class PostService {
 
       const content = readFileSync(fullPath, 'utf8');
 
-      // 첫 번째 "# 제목" 라인 찾기
       let title = slug;
       const match = content.match(/^#\s+(.+)$/m);
       if (match) {
         title = match[1].trim();
       }
 
-      // 파일 수정 시간을 date로 사용
       const stats = statSync(fullPath);
-      const date = stats.mtime.toISOString().slice(0, 10); // "YYYY-MM-DD"
+      const date = stats.mtime.toISOString().slice(0, 10);
 
       return { slug, title, date };
     });
 
-    // 날짜 기준 내림차순 정렬 (최신 글 위로)
     return posts.sort((a, b) => +new Date(b.date) - +new Date(a.date));
   }
 

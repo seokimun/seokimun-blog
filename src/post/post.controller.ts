@@ -9,7 +9,7 @@ export class PostController {
 
   @Get()
   getPosts() {
-    return this.postService.getAllPosts(); // 자동 생성된 목록
+    return this.postService.getAllPosts();
   }
 
   @Get('/:slug')
